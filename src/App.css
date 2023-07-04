@@ -36,3 +36,73 @@
     transform: rotate(360deg);
   }
 }
+
+
+::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  cursor: pointer;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  cursor: pointer;
+}
+
+.abc {
+  /* padding: 10px; */
+  max-height: 250px;
+  overflow: scroll;
+  position: absolute;
+  z-index: 2;
+  /* color: black; */
+  top: 50px;
+  justify-self: stretch;
+  /* width: 400px; */
+  transition: 700ms ease;
+  box-shadow: 0 4px 6px 1.5px rgba(177, 197, 213, 0.915);
+  overflow-x: hidden;
+  margin-top: 30px;
+  /* border: 2px solid; */
+  border-radius: 8px;
+}
+
+.searchmap{
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+}
+.searchmap:hover{
+  /* background-color: rgb(22, 96, 174); */
+  /* color: white; */
+}
+.searchbar{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: 700ms ease;
+}
+ /* ------- */
+.container {
+  position: absolute;
+  margin: auto;
+  width: 300px;
+  height: 100px;
+  
+}
+  
+  
+ 

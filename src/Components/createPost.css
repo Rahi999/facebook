@@ -1,0 +1,16 @@
+.create-post-title{
+    margin-top: 5px;
+    color: grey;
+    font-weight: bold;
+    margin-left: 5px;
+    font-style: inherit;
+}
+
+
+
+/* @media screen and (max-width: 500px) {
+   .image{
+    width: 35%;
+    height: 100%;
+}
+} */
