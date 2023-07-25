@@ -71,7 +71,7 @@ const CreatePost = ({getPosts, inputRef}) => {
     };
 
     const handleCreatePost = async () => {
-       if(!text || !cloudinaryImage){
+       if(!text && !cloudinaryImage){
         toast({
             title: "cann't create empty post.",
             position: "top",

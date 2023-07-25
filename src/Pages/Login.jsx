@@ -204,7 +204,7 @@ const Login = () => {
   }
 
   const handleSendOtp = () => {
-    if (!phone || phone.length < 10 || phone[0] < 5 || phone.length > 10) {
+    if (!phone || phone.length < 10 || phone[0] <= 5 || phone.length > 10) {
       toast({
         description: "Please enter a valid phone number.",
         position: "top",
@@ -219,7 +219,7 @@ const Login = () => {
       const payload = {
         phoneNumber: `91${phone}`
       }
-      axios.post(`${process.env.REACT_APP_DEV_BASE_URL}/otp/send-otp`, payload)
+      axios.post(`${process.env.REACT_APP_DEV_BASE_URL}otp/send-otp`, payload)
         .then((res) => {
           setLoading(false)
           toast({
@@ -233,7 +233,7 @@ const Login = () => {
         .catch((err) => {
           setLoading(false)
           toast({
-            description: err.response.data.message,
+            description: "API Limit exceeded!",
             position: "top",
             status: 'error',
             duration: 3000,

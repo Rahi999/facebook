@@ -182,7 +182,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
           ml={{ base: "0", sm: "0", md: "30%", lg: "-10%", lg: "-10%" }}
         >
 
-          <Box title="Search For Products" class="container">
+          <Box title="Search For users" class="container">
             <InputGroup
               width="300px"
               display={{ base: 'none', sm: "flex", md: 'none', lg: "none", xl: "none" }}
@@ -212,7 +212,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
             >
               {filteredResults.map((el) => {
                 return (
-                  <Link id="categoryAncer" to={`/user-profile/${el._id}`} >
+                  <Link id="categoryAncer" to={`/users-profile/${el._id}`} >
                     <Box className="searchmap" onClick={() => setSearchInput("")}>
                       <Box style={{ width: "30px", height: "30px" }}>
                         <Avatar size={'xs'} borderRadius={'lg'} src={el.profile_pic} ></Avatar>
@@ -406,7 +406,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
                 >
                   {filteredResults.map((el) => {
                     return (
-                      <Link id="categoryAncer" to={`/user-profile/${el._id}`} >
+                      <Link id="categoryAncer" to={`/users-profile/${el._id}`} >
                         <Box className="searchmap" onClick={() => setSearchInput("")}>
                           <Box style={{ width: "30px", height: "30px" }}>
                             <Avatar size={'sm'} borderRadius={'lg'} src={el.profile_pic}></Avatar>

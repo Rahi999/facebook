@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Box, Text, Button, Image, Tooltip, AvatarGroup, Drawer, Divider, Flex, useToast } from "@chakra-ui/react"
+import { Box, Text, Button, Image, Tooltip, AvatarGroup, Drawer, Divider, Flex, useToast, Avatar } from "@chakra-ui/react"
 import { IconButton } from '@chakra-ui/react';
 import { BiCommentDetail } from 'react-icons/bi';
 import { AiFillDislike, AiOutlineDislike } from 'react-icons/ai';
@@ -69,7 +69,7 @@ const PostCard = ({
         >
             <Box className="post-header" onClick={() => navigate(`/users-profile/${userId}`)} cursor="pointer">
                 <Box className="image-input">
-                    <Image
+                    <Avatar
                         className="post-avatar"
                         src={user_profile}
                         alt="User Avatar"

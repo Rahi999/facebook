@@ -24,7 +24,8 @@ const CreateStoryBox = ( { handleCreateStory} ) => {
         <IconButton
           icon={<AddIcon />}
           size="md"
-          bg= {theme=="light" ? "" : "gray.800"}
+          bg= {theme=="light" ? "gray.800" : "gray.800"}
+          color={'white'}
           borderRadius="full"
           mr={2}
         />
