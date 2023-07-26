@@ -219,7 +219,7 @@ const Messages = ({ senderId, receiverId }) => {
                 :
                 <Box m={'auto'} onClick={() => navigate("/users")} cursor={'pointer'}>
                   <Image
-                    src="https://github.com/Rahi999/Facebook-clone/blob/main/client-codeBase/facebook_frontend_codebase/src/assets/messanger.jpg?raw=true"
+                    src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c526.png"
                     alt="No messages yet"
                     borderRadius={'50px'}
                     width={'30%'}

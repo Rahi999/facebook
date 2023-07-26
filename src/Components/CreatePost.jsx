@@ -177,18 +177,18 @@ const CreatePost = ({getPosts, inputRef}) => {
                 <Flex justifyContent={'space-evenly'} p='2' display={{base: "none", sm: "none", md: 'flex', lg: "flex", xl: "flex"}}>
                 
                 <Flex as="label" htmlFor="upload-image" cursor="pointer" >
-                <Image className="image" src="https://github.com/Rahi999/Facebook-clone/blob/main/client-codeBase/facebook_frontend_codebase/src/assets/happy.png?raw=true" size="4rem" title="Choose files" />
+                <Image size='3rem' className="image" src="https://raw.githubusercontent.com/Rahi999/Facebook-clone/main/client-codeBase/facebook_frontend_codebase/src/assets/gallery.png" title="Choose files" />
                 <Text fontSize={{base: "12px", sm: "13px", md: '14px', lg: "", xl: ""}} className="create-post-title">Photo</Text>
                 </Flex>
 
                 <Flex as="label" htmlFor="upload-image" cursor="pointer" >
-                    <Image size="4rem" className="image" src="https://github.com/Rahi999/Facebook-clone/blob/main/client-codeBase/facebook_frontend_codebase/src/assets/video.png?raw=true"
+                    <Image size="3rem" className="image" src="https://github.com/Rahi999/Facebook-clone/blob/main/client-codeBase/facebook_frontend_codebase/src/assets/video.png?raw=true"
                      />
                     <Text fontSize={{base: "12px", sm: "13px", md: '14px', lg: "", xl: ""}} className="create-post-title">Video</Text>
                 </Flex>
 
                 <Flex as="label" htmlFor="upload-image" cursor="pointer" >
-                    <Image size="4rem" className="image" src="https://github.com/Rahi999/Facebook-clone/blob/main/client-codeBase/facebook_frontend_codebase/src/assets/happy.png?raw=true" />
+                    <Image size="3rem" className="image" src="https://github.com/Rahi999/Facebook-clone/blob/main/client-codeBase/facebook_frontend_codebase/src/assets/happy.png?raw=true" />
                     <Text fontSize={{base: "12px", sm: "13px", md: '14px', lg: "", xl: ""}} className="create-post-title">
                         Feeling/activity
                     </Text>
