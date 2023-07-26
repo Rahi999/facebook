@@ -63,6 +63,20 @@ const SingleVideo = () => {
                     //   loop={true}
                       style={{ width: "100%", height: "100%" }}
                     />
+                    <Box p={2} className="story-info">
+                      <Flex align="center">
+                        <Avatar
+                          src="https://img.freepik.com/premium-vector/man-avatar-profile-picture-vector-illustration_268834-538.jpg?w=2000"
+                          alt="Rahi"
+                          w="30px"
+                          h="30px"
+                          borderRadius="full"
+                        />
+                        <Text fontWeight="semibold" ml={2} fontSize="12px">
+                          Rahi
+                        </Text>
+                      </Flex>
+                    </Box>
                     {!isPlaying[index] && (
                       <Box
                         position="absolute"

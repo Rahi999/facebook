@@ -16,7 +16,7 @@ const CreateStoryBox = ( { handleCreateStory} ) => {
     //   border={'2px solid red'}
     mt={'8px'}
       width={'125px'}
-      height={'175px'}
+      height={'205px'}
     >
       <Flex align="center" justify="center" mb={2} 
     //   border={'2px solid'}

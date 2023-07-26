@@ -1,0 +1,51 @@
+/* src/components/StoryCard.css */
+
+.story-card {
+    position: relative;
+    cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .story-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .story-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 8px;
+    /* background-color: rgba(0, 0, 0, 0.6); */
+    color: white;
+    font-style: italic;
+  }
+  
+  .story-info img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+  
+  .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0.8;
+    transition: opacity 0.3s;
+  }
+  
+  .play-button:hover {
+    opacity: 1;
+  }
+  
