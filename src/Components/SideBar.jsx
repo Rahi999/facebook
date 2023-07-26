@@ -1,6 +1,12 @@
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 import React, { ReactNode, useEffect, useState } from 'react';
+import { IconContext } from "react-icons";
+import { BiChevronDown } from 'react-icons/bi';
+import { WiDayCloudy } from "react-icons/wi";
+import { BsPeople, BsFlag } from "react-icons/bs";
+import { RiMessengerLine, RiVideoAddFill } from "react-icons/ri";
+import { MdOutlineGroups } from "react-icons/md";
 import { Link } from "react-router-dom"
 import Theme from './Theme';
 import Loading from "./Loading"
@@ -53,6 +59,7 @@ import FbTabs from "./Tabs"
 import { BiCommentDetail } from 'react-icons/bi';
 import { FaUsers } from 'react-icons/fa';
 const theme = localStorage.getItem('chakra-ui-color-mode')
+// const { colorMode, toggleColorMode } = useColorMode();
 
 const boxStyle = {
   border: theme === "light" ? "3px solid transparent" : "3px solid transparent",
@@ -65,13 +72,13 @@ const bgStyle = {
 const userId = getCookies("userId")
 const LinkItems = [
   { name: 'Home', icon: FiHome, title: "Home", to: "/" },
-  { name: "Chat", icon: BiCommentDetail, title: "Chat", to: "/chat" },
-  { name: 'Friends', icon: AiOutlineUsergroupAdd, title: "Friends & Group", to: "/chat" },
-  { name: 'Trending', icon: FiTrendingUp, title: "Trending stories", to: "/trending" },
-  { name: "Story", icon: AiFillYoutube, title: "Stories", to: "/trending" },
+  { name: 'Friends', icon: BsPeople, title: "Friends & Group", to: "/chat" },
+  { name: "Messanger", icon: RiMessengerLine, title: "Chat", to: "/chat" },
+  { name: 'Trending', icon: RiVideoAddFill, title: "Trending stories", to: "/trending" },
+  // { name: "Story", icon: RiVideoAddFill, title: "Stories", to: "/trending" },
   { name: "Groups", icon: FaUsers, title: "Groups", to: "/users"},
   { name: 'Profile', icon: FaUserCircle, title: "Profile", to: `/user-profile/${userId}` },
-  { name: 'Settings', icon: FiSettings, title: "Profile setting", to: `/user-profile/${userId}` },
+  // { name: 'Settings', icon: FiSettings, title: "Profile setting", to: `/user-profile/${userId}` },
   { name: <Theme />, icon: theme === "light" ? BsMoonStarsFill : BsSun, title: "Click here to toggle theme", to: "#"}
 ];
 
@@ -186,6 +193,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
             <InputGroup
               width="300px"
               display={{ base: 'none', sm: "flex", md: 'none', lg: "none", xl: "none" }}
+              // bg={'rgb(241, 240, 240)'}
             >
               <InputLeftElement
                 pointerEvents="none"
@@ -199,6 +207,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
                 py="2"
                 pl="10"
                 onChange={handleInputChange}
+                // bg={'rgb(241, 240, 240)'}
               />
             </InputGroup>
             <Box onClick={() => handleSearch()} class="search"></Box>
@@ -245,32 +254,36 @@ const SidebarContent = ({ onClose, ...rest }) => {
 
 const NavItem = ({to, icon, children, ...rest }) => {
   return (
-    <Link to={to} style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
+    <IconContext.Provider value={{ size: "1.5em", color: "#2e81f4", className: "global-class-name" }}>
+      <Box className='sidebarRow'>
+      <Link to={to} style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
       <Flex
         align="center"
-        p="4"
+        // p="4"
         mx="4"
         borderRadius="lg"
         role="group"
         cursor="pointer"
-        _hover={{
-          bg: 'gray.400',
-          color: 'white',
-        }}
+        // _hover={{
+        //   bg: 'gray.400',
+        //   color: 'white',
+        // }}
         {...rest}>
         {icon && (
           <Icon
             mr="4"
-            fontSize="16"
+            fontSize="18"
             _groupHover={{
               color: 'white',
             }}
             as={icon}
           />
         )}
-        {children}
+        <h4 className='h4'>{children}</h4>
       </Flex>
     </Link>
+    </Box>
+    </IconContext.Provider>
   );
 };
 
@@ -387,12 +400,13 @@ const MobileNav = ({ onOpen, ...rest }) => {
                   />
                   <Input
                     type="text"
-                    border="1px"
+                    border="1px solid gray"
                     placeholder="Search Facebook"
                     borderRadius="full"
                     py="2"
                     pl="10"
                     onChange={handleInputChange}
+                    // bg={'rgb(241, 240, 240)'}
                   />
                 </InputGroup>
                 <Box onClick={() => handleSearch()} class="search"></Box>
@@ -414,7 +428,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
                           {/* <a href={`/${item.category}/${item.title}/${item.id}`}>
                 <p>{item.title}</p>
               </a> */}
-                          <Text fontSize={{ base: "12px", sm: "12px", md: "14px", lg: "14px", sl: "16px" }}>{el.firstname + " " + el.surename}</Text>
+                          <Text className='h4' fontSize={{ base: "12px", sm: "12px", md: "14px", lg: "14px", sl: "16px" }}>{el.firstname + " " + el.surename}</Text>
                         </Box>
                       </Link>
 
@@ -442,10 +456,10 @@ const MobileNav = ({ onOpen, ...rest }) => {
                   alignItems="flex-start"
                   spacing="1px"
                   ml="2">
-                  <Text fontSize="sm">{userData.firstname}</Text>
+                  <Text className='h4' fontSize="sm">{userData.firstname+ " "+ userData.surename}</Text>
                 </VStack>
                 <Box display={{ base: 'none', md: 'flex' }}>
-                  <FiChevronDown />
+                  <FiChevronDown fontWeight={'bold'} />
                 </Box>
               </HStack>
             </MenuButton>
