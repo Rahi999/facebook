@@ -1,22 +1,25 @@
-#firstlastnamebox{
+#firstlastnamebox {
     display: flex;
     gap: 3%;
 }
 
-#RadioBox #GenderRadio{
+#RadioBox #GenderRadio {
     border: 1px solid grey;
     width: 150%;
     padding: 2%;
     border-radius: 8px;
 }
-@media  screen and (max-width: 600px){
-    #firstName{
+
+@media screen and (max-width: 600px) {
+    #firstName {
         display: block;
     }
-    #firstlastnamebox{
+
+    #firstlastnamebox {
         display: block;
     }
-    #lastName{
+
+    #lastName {
         margin-top: 5%;
     }
 }

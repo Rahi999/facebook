@@ -20,7 +20,7 @@ import { CloseIcon } from "@chakra-ui/icons";
 import Uploading from "./Uploading";
 import { getCookies } from "../utils/getData";
 
-const CreatePost = ({getPosts, inputRef}) => {
+const CreatePost = ({ getPosts, inputRef }) => {
     const [text, setText] = useState("");
     const [image, setImage] = useState("");
     const [cloudinaryImage, setCloudinaryImage] = useState("")
@@ -71,65 +71,65 @@ const CreatePost = ({getPosts, inputRef}) => {
     };
 
     const handleCreatePost = async () => {
-       if(!text && !cloudinaryImage){
-        toast({
-            title: "cann't create empty post.",
-            position: "top",
-            status: 'info',
-            duration: 3000,
-            isClosable: true,
-        })
-       }
-       else{
-        setLoading(true)
-        const userId = getCookies('userId')
-        const token = getCookies("fb_token")
-        console.log(cloudinaryImage)
-        try {
-            const payload = {
-                type: "POST",
-                text: text,
-                images: cloudinaryImage,
-                date: formattedDateTime,
-                user: userId,
-            }
-            console.log(payload)
-            axios.post(`${process.env.REACT_APP_DEV_BASE_URL}/post/create`, payload)
-                .then((res) => {
-                    // toast({
-                    //     title: res.data.message,
-                    //     position: "top",
-                    //     status: 'success',
-                    //     duration: 3000,
-                    //     isClosable: true,
-                    // })
-                    setLoading(false)
-                    setImage("")
-                    setText("")
-                    getPosts()
-                })
-                .catch((err) => {
-                    setLoading(false)
-                    toast({
-                        title: err.response.data.message,
-                        position: "top",
-                        status: 'error',
-                        duration: 3000,
-                        isClosable: false,
-                    })
-                })
-        }
-        catch (err) {
-            setLoading(false)
-            console.log(err)
+        if (!text && !cloudinaryImage) {
             toast({
-                title: err.response.data.message,
+                title: "cann't create empty post.",
                 position: "top",
-                status: 'error',
+                status: 'info',
                 duration: 3000,
+                isClosable: true,
             })
         }
-       }
+        else {
+            setLoading(true)
+            const userId = getCookies('userId')
+            const token = getCookies("fb_token")
+            console.log(cloudinaryImage)
+            try {
+                const payload = {
+                    type: "POST",
+                    text: text,
+                    images: cloudinaryImage,
+                    date: formattedDateTime,
+                    user: userId,
+                }
+                console.log(payload)
+                axios.post(`${process.env.REACT_APP_DEV_BASE_URL}/post/create`, payload)
+                    .then((res) => {
+                        // toast({
+                        //     title: res.data.message,
+                        //     position: "top",
+                        //     status: 'success',
+                        //     duration: 3000,
+                        //     isClosable: true,
+                        // })
+                        setLoading(false)
+                        setImage("")
+                        setText("")
+                        getPosts()
+                    })
+                    .catch((err) => {
+                        setLoading(false)
+                        toast({
+                            title: err.response.data.message,
+                            position: "top",
+                            status: 'error',
+                            duration: 3000,
+                            isClosable: false,
+                        })
+                    })
+            }
+            catch (err) {
+                setLoading(false)
+                console.log(err)
+                toast({
+                    title: err.response.data.message,
+                    position: "top",
+                    status: 'error',
+                    duration: 3000,
+                })
+            }
+        }
 
     };
 
@@ -143,19 +143,19 @@ const CreatePost = ({getPosts, inputRef}) => {
             >
                 <Flex alignItems="center" mb={4} gap="5">
                     <Box>
-                        <Avatar src={getCookies("user-profile")} display={{base: "none", sm: "none", md: "flex", lg: "flex", xl: "flex"}} />
-                        <Flex as="label" htmlFor="upload-image" cursor="pointer" display={{md: "none", lg: "none", xl: "none"}}>
-                <Image className="image" src="https://github.com/Rahi999/Facebook-clone/blob/main/client-codeBase/facebook_frontend_codebase/src/assets/gallery.png?raw=true"
-                 size="4rem" title="Choose files" />
-                <Text fontSize={{base: "12px", sm: "13px", md: '14px', lg: "", xl: ""}} className="create-post-title">Photo</Text>
-                </Flex>
-                <input
-                        type="file"
-                        accept="image/*"
-                        onChange={handleImageChange}
-                        style={{ display: "none" }}
-                        id="upload-image"
-                    />
+                        <Avatar src={getCookies("user-profile")} display={{ base: "none", sm: "none", md: "flex", lg: "flex", xl: "flex" }} />
+                        <Flex as="label" htmlFor="upload-image" cursor="pointer" display={{ md: "none", lg: "none", xl: "none" }}>
+                            <Image className="image" src="https://github.com/Rahi999/Facebook-clone/blob/main/client-codeBase/facebook_frontend_codebase/src/assets/gallery.png?raw=true"
+                                size="4rem" title="Choose files" />
+                            <Text fontSize={{ base: "12px", sm: "13px", md: '14px', lg: "", xl: "" }} className="create-post-title">Photo</Text>
+                        </Flex>
+                        <input
+                            type="file"
+                            accept="image/*"
+                            onChange={handleImageChange}
+                            style={{ display: "none" }}
+                            id="upload-image"
+                        />
                     </Box>
                     <Textarea
                         ref={inputRef}
@@ -173,40 +173,40 @@ const CreatePost = ({getPosts, inputRef}) => {
                         flex="1"
                     />
                 </Flex>
-                <Box height={'1px'} bg={'grey'} display={{base: "none", sm: "none", md: 'block', lg: "block", xl: "block"}}></Box>
-                <Flex justifyContent={'space-evenly'} p='2' display={{base: "none", sm: "none", md: 'flex', lg: "flex", xl: "flex"}}>
-                
-                <Flex as="label" htmlFor="upload-image" cursor="pointer" >
-                <Image size='3rem' className="image" src="https://raw.githubusercontent.com/Rahi999/Facebook-clone/main/client-codeBase/facebook_frontend_codebase/src/assets/gallery.png" title="Choose files" />
-                <Text fontSize={{base: "12px", sm: "13px", md: '14px', lg: "", xl: ""}} className="create-post-title">Photo</Text>
-                </Flex>
+                <Box height={'1px'} bg={'grey'} display={{ base: "none", sm: "none", md: 'block', lg: "block", xl: "block" }}></Box>
+                <Flex justifyContent={'space-evenly'} p='2' display={{ base: "none", sm: "none", md: 'flex', lg: "flex", xl: "flex" }}>
 
-                <Flex as="label" htmlFor="upload-image" cursor="pointer" >
-                    <Image size="3rem" className="image" src="https://github.com/Rahi999/Facebook-clone/blob/main/client-codeBase/facebook_frontend_codebase/src/assets/video.png?raw=true"
-                     />
-                    <Text fontSize={{base: "12px", sm: "13px", md: '14px', lg: "", xl: ""}} className="create-post-title">Video</Text>
-                </Flex>
+                    <Flex as="label" htmlFor="upload-image" cursor="pointer" >
+                        <Image size='3rem' className="image" src="https://raw.githubusercontent.com/Rahi999/Facebook-clone/main/client-codeBase/facebook_frontend_codebase/src/assets/gallery.png" title="Choose files" />
+                        <Text fontSize={{ base: "12px", sm: "13px", md: '14px', lg: "", xl: "" }} className="create-post-title">Photo</Text>
+                    </Flex>
 
-                <Flex as="label" htmlFor="upload-image" cursor="pointer" >
-                    <Image size="3rem" className="image" src="https://github.com/Rahi999/Facebook-clone/blob/main/client-codeBase/facebook_frontend_codebase/src/assets/happy.png?raw=true" />
-                    <Text fontSize={{base: "12px", sm: "13px", md: '14px', lg: "", xl: ""}} className="create-post-title">
-                        Feeling/activity
-                    </Text>
-                </Flex>
+                    <Flex as="label" htmlFor="upload-image" cursor="pointer" >
+                        <Image size="3rem" className="image" src="https://github.com/Rahi999/Facebook-clone/blob/main/client-codeBase/facebook_frontend_codebase/src/assets/video.png?raw=true"
+                        />
+                        <Text fontSize={{ base: "12px", sm: "13px", md: '14px', lg: "", xl: "" }} className="create-post-title">Video</Text>
+                    </Flex>
+
+                    <Flex as="label" htmlFor="upload-image" cursor="pointer" >
+                        <Image size="3rem" className="image" src="https://github.com/Rahi999/Facebook-clone/blob/main/client-codeBase/facebook_frontend_codebase/src/assets/happy.png?raw=true" />
+                        <Text fontSize={{ base: "12px", sm: "13px", md: '14px', lg: "", xl: "" }} className="create-post-title">
+                            Feeling/activity
+                        </Text>
+                    </Flex>
                 </Flex>
                 <input
-                        type="file"
-                        accept="image/*"
-                        onChange={handleImageChange}
-                        style={{ display: "none" }}
-                        id="upload-image"
-                    />
+                    type="file"
+                    accept="image/*"
+                    onChange={handleImageChange}
+                    style={{ display: "none" }}
+                    id="upload-image"
+                />
                 <Flex justifyContent="flex-start" >
                     {loading ? <Box width="100%"><Uploading /></Box> : image && (
                         <Box>
                             <Flex justifyContent="flex-end" cursor='pointer' onClick={() => setImage("")} title="Remove selected image">
                                 <Image width="8" src="https://github.com/Rahi999/Facebook-clone/blob/main/client-codeBase/facebook_frontend_codebase/src/assets/remove.png?raw=true"
-                                 alt="close-icon" />
+                                    alt="close-icon" />
                             </Flex>
                             <Box
                                 as="img"

@@ -8,7 +8,7 @@ const Comment = () => {
     const params = useParams()
     return (<>
         <Box>
-            <SideBar children={<CommentsList postId={params.postId}/>}/>
+            <SideBar children={<CommentsList postId={params.postId} />} />
         </Box>
     </>)
 }

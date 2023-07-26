@@ -1,11 +1,11 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { Box, Button, useToast } from "@chakra-ui/react";
 import { FaUserMinus } from 'react-icons/fa';
 import { useNavigate } from "react-router-dom";
 import { getCookies } from "../utils/getData";
 
-const UnFollow = ({getUserprofile, userId, followers}) => {
+const UnFollow = ({ getUserprofile, userId, followers }) => {
 
     const [loading, setLoading] = useState(false)
     const toast = useToast()
@@ -18,34 +18,34 @@ const UnFollow = ({getUserprofile, userId, followers}) => {
     // console.log(following)
 
     const handleUnFollow = () => {
-        if(myId && userId){
+        if (myId && userId) {
             setLoading(true)
             const payload = {
-                userId : myId
+                userId: myId
             }
-            axios.put(`${process.env.REACT_APP_DEV_BASE_URL}/user/unfollow/${userId}`,payload)
-            .then((res) => {
-                toast({
-                    description: res.data.message,
-                    position: "top",
-                    status: "success",
-                    duration: "3000"
+            axios.put(`${process.env.REACT_APP_DEV_BASE_URL}/user/unfollow/${userId}`, payload)
+                .then((res) => {
+                    toast({
+                        description: res.data.message,
+                        position: "top",
+                        status: "success",
+                        duration: "3000"
+                    })
+                    setLoading(false)
+                    getUserprofile()
                 })
-                setLoading(false)
-                getUserprofile()
-            })
-            .catch((err) => {
-                setLoading(false)
-                toast({
-                    description: err.response.data.message,
-                    position: "top",
-                    status: "error",
-                    duration: "3000"
+                .catch((err) => {
+                    setLoading(false)
+                    toast({
+                        description: err.response.data.message,
+                        position: "top",
+                        status: "error",
+                        duration: "3000"
+                    })
                 })
-            })
-            
+
         }
-        else{
+        else {
             toast({
                 description: "User not found",
                 position: "top",
@@ -57,10 +57,10 @@ const UnFollow = ({getUserprofile, userId, followers}) => {
     }
     return (<>
         <Box>
-        <Button 
-        onClick={handleUnFollow}
-        isDisabled={!followers.includes(myId)}
-        title="Unfollow"
+            <Button
+                onClick={handleUnFollow}
+                isDisabled={!followers.includes(myId)}
+                title="Unfollow"
                 marginTop="10%"
                 width="70%"
                 flex={1}
@@ -77,9 +77,9 @@ const UnFollow = ({getUserprofile, userId, followers}) => {
                 _focus={{
                     bg: 'red.500',
                 }}>
-                {loading ? "Please wait..." :  "Unfollow" }
+                {loading ? "Please wait..." : "Unfollow"}
                 {/* Unfollow */}
-                
+
             </Button>
         </Box>
     </>)

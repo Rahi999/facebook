@@ -87,7 +87,7 @@ const Trending = () => {
                     <Box
                       borderRadius={"8px"}
                       width="100%"
-                      height={{base: "90vh", sm: "90vh", md: "400px", lg: "550px", xl: "550px"}}
+                      height={{ base: "90vh", sm: "90vh", md: "400px", lg: "550px", xl: "550px" }}
                       padding="1%"
                       paddingBottom="" // Aspect ratio of 16:9 (9 / 16 * 100%)
                       position="relative"

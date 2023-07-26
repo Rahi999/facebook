@@ -1,5 +1,5 @@
 import './App.css';
-import { ChakraProvider} from '@chakra-ui/react'
+import { ChakraProvider } from '@chakra-ui/react'
 import AllRoutes from './Routes/AllRoutes';
 
 
@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <ChakraProvider>
-       <AllRoutes />
+        <AllRoutes />
       </ChakraProvider>
     </div>
   );

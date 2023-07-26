@@ -20,7 +20,7 @@ const FbTabs = () => {
                 <TabList gap="1%" display={{ base: 'none', sm: "flex", md: 'flex', lg: "flex", xl: "flex" }} p="5">
                     <Tab title="Home"><AiFillHome size={27} /></Tab>
                     <Tab title="Chat">
-                    <IconButton
+                        <IconButton
                             aria-label="Comment"
                             icon={<BiCommentDetail />}
                         />
@@ -45,20 +45,20 @@ const FbTabs = () => {
                         <Chat />
                     </TabPanel>
                     <TabPanel>
-                        <Box  
-                         ml={{base: "0", sm: "0", md: "0", lg: "-80", xl: "-80"}}
-                         >
-                        <Story />
+                        <Box
+                            ml={{ base: "0", sm: "0", md: "0", lg: "-80", xl: "-80" }}
+                        >
+                            <Story />
                         </Box>
                     </TabPanel>
                     <TabPanel>
                         <Chat />
                     </TabPanel>
                     <TabPanel>
-                    <Box  
-                         ml={{base: "0", sm: "0", md: "0", lg: "-80", xl: "-80"}}
-                         >
-                        <Story />
+                        <Box
+                            ml={{ base: "0", sm: "0", md: "0", lg: "-80", xl: "-80" }}
+                        >
+                            <Story />
                         </Box>
                     </TabPanel>
                 </TabPanels>

@@ -43,7 +43,7 @@ const Profile = () => {
     const { colorMode, toggleColorMode } = useColorMode();
     const [image, setImage] = useState('');
     const [cloudinaryImage, setCloudinaryImage] = useState("")
-    const uploadInputRef = useRef(null); 
+    const uploadInputRef = useRef(null);
 
 
     const handleImageChange = async (event) => {
@@ -108,7 +108,7 @@ const Profile = () => {
     }
 
     useEffect(() => {
-      document.title = "Facebook | Personal profile"
+        document.title = "Facebook | Personal profile"
         getUserprofile()
     }, [])
 
@@ -193,7 +193,7 @@ const Profile = () => {
                     style={{ display: "none" }}
                     id="upload-image"
                 />
-                
+
             </Flex>
             {loading && <Uploading />}
             {cloudinaryImage && <Button

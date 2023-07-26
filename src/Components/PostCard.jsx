@@ -83,15 +83,15 @@ const PostCard = ({
             </Box>
             <Box className="post-content">
                 <Text className="post-text" fontSize={{ base: "14px", sm: "14px", md: "16px", lg: "16px", xl: "16px" }} maxW={'100%'}>{post_text}</Text>
-                    <Image className="post-image"
-                        src={post_image}
-                        objectFit="cover"
-                        width="100%"
-                        maxHeight="500px"
-                        position="relative"
-                        alt="Post Image"
-                        onClick={() => navigate(`/detailed-image/${encodeURIComponent(post_image)}`)} cursor="pointer"
-                    />
+                <Image className="post-image"
+                    src={post_image}
+                    objectFit="cover"
+                    width="100%"
+                    maxHeight="500px"
+                    position="relative"
+                    alt="Post Image"
+                    onClick={() => navigate(`/detailed-image/${encodeURIComponent(post_image)}`)} cursor="pointer"
+                />
             </Box>
 
             {/* <Box className="post-actions"> */}

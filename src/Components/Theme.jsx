@@ -18,7 +18,7 @@ export default function Theme(props) {
         {...props}>
         {colorMode === 'light' ? "Dark Mode" : "Light Mode"}
       </Text>
-      
+
     </Flex>
   );
 }

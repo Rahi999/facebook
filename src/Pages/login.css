@@ -1,39 +1,48 @@
-#loginGrid{
+#loginGrid {
     display: flex;
 }
-#loginFirst{
+
+#loginFirst {
     width: 50%;
     height: 100vh;
     padding: 5%;
 }
-#loginSecond{
+
+#loginSecond {
     width: 50%;
 }
-#LoginLogo{
+
+#LoginLogo {
     width: 60%;
     margin-left: 20%;
     margin-top: 10%;
 }
-#LoginText{
+
+#LoginText {
     font-size: 26px;
     text-align: center;
 }
-@media  screen and (max-width: 600px){
-    #loginGrid{
+
+@media screen and (max-width: 600px) {
+    #loginGrid {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
     }
-    #loginFirst{
+
+    #loginFirst {
         width: 100%;
         height: 25vh;
     }
-    #loginSecond{
+
+    #loginSecond {
         width: 100%;
     }
-    #LoginLogo{
+
+    #LoginLogo {
         margin-top: -5%;
     }
-    #LoginText{
+
+    #LoginText {
         font-size: 23px;
     }
 }

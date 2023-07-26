@@ -26,8 +26,8 @@ const Dashboard = () => {
   return (
     <Box bg={'white'} >
       <SideBar
-       children={<FbTabs />}
-        />
+        children={<FbTabs />}
+      />
     </Box>
   )
 }

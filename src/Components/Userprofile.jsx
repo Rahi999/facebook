@@ -63,11 +63,11 @@ const UserProfile = () => {
     }
 
     useEffect(() => {
-      document.title = "Facebook | Users' personal profile"
+        document.title = "Facebook | Users' personal profile"
         getUserprofile()
     }, [])
     return userData ? (<Center py={6}><Box
-        maxW={{base: "100%", sm: "100%", md: "300px", lg: "300px", xl: '300px'}}
+        maxW={{ base: "100%", sm: "100%", md: "300px", lg: "300px", xl: '300px' }}
         w={'full'}
         // bg={useColorModeValue('white', 'gray.800')}
         boxShadow={'2xl'}
@@ -91,7 +91,7 @@ const UserProfile = () => {
                 alt={'User_image'}
 
             >
-                
+
             </Avatar>
         </Flex>
 

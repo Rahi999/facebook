@@ -194,30 +194,30 @@ const SignUpForm = () => {
         phoneNumber: `91${phone}`,
         otp: otp
       }
-        setLoading(true)
-        axios.post(`${process.env.REACT_APP_DEV_BASE_URL}/otp/verify`, payload)
-          .then((res) => {
-            toast({
-              title: `${res.data.message}`,
-              position: "top",
-              status: 'success',
-              duration: 3000,
-              isClosable: true,
-            })
-            setLoading(false)
-            onClose()
-            handleSubmit()
+      setLoading(true)
+      axios.post(`${process.env.REACT_APP_DEV_BASE_URL}/otp/verify`, payload)
+        .then((res) => {
+          toast({
+            title: `${res.data.message}`,
+            position: "top",
+            status: 'success',
+            duration: 3000,
+            isClosable: true,
           })
-          .catch((err) => {
-            setLoading(false)
-            toast({
-              title: `${err.response.data.message}`,
-              position: "top",
-              status: 'error',
-              duration: 5000,
-              isClosable: true,
-            })
+          setLoading(false)
+          onClose()
+          handleSubmit()
+        })
+        .catch((err) => {
+          setLoading(false)
+          toast({
+            title: `${err.response.data.message}`,
+            position: "top",
+            status: 'error',
+            duration: 5000,
+            isClosable: true,
           })
+        })
     } else {
       setLoading(false)
       toast({
@@ -408,23 +408,23 @@ const SignUpForm = () => {
                     <ModalFooter>
                       {!loading ? <Box justifyContent={'space-evenly'}>
                         <Button
-                        colorScheme="blue"
-                        mr={3}
-                        onClick={handleVerifyOtp}
-                        isDisabled={otp.length !== 6}
-                      >
-                        Verify
-                      </Button>
-                      <Button
-                      // variant={''}
-                        colorScheme="green"
-                        mr={3}
-                        onClick={handleSubmit}
+                          colorScheme="blue"
+                          mr={3}
+                          onClick={handleVerifyOtp}
+                          isDisabled={otp.length !== 6}
+                        >
+                          Verify
+                        </Button>
+                        <Button
+                          // variant={''}
+                          colorScheme="green"
+                          mr={3}
+                          onClick={handleSubmit}
                         // isDisabled={otp.length !== 6}
                         // fontSize={{base: "12px", sm: "12px", md: "13px"}}
-                      >
-                        Ignore OTP Verification
-                      </Button>
+                        >
+                          Ignore OTP Verification
+                        </Button>
                       </Box> :
                         <Button
                           isLoading

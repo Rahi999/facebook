@@ -76,10 +76,10 @@ const LinkItems = [
   { name: "Messanger", icon: RiMessengerLine, title: "Chat", to: "/chat" },
   { name: 'Trending', icon: RiVideoAddFill, title: "Trending stories", to: "/trending" },
   // { name: "Story", icon: RiVideoAddFill, title: "Stories", to: "/trending" },
-  { name: "Groups", icon: FaUsers, title: "Groups", to: "/users"},
+  { name: "Groups", icon: FaUsers, title: "Groups", to: "/users" },
   { name: 'Profile', icon: FaUserCircle, title: "Profile", to: `/user-profile/${userId}` },
   // { name: 'Settings', icon: FiSettings, title: "Profile setting", to: `/user-profile/${userId}` },
-  { name: <Theme />, icon: theme === "light" ? BsMoonStarsFill : BsSun, title: "Click here to toggle theme", to: "#"}
+  { name: <Theme />, icon: theme === "light" ? BsMoonStarsFill : BsSun, title: "Click here to toggle theme", to: "#" }
 ];
 
 
@@ -193,7 +193,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
             <InputGroup
               width="300px"
               display={{ base: 'none', sm: "flex", md: 'none', lg: "none", xl: "none" }}
-              // bg={'rgb(241, 240, 240)'}
+            // bg={'rgb(241, 240, 240)'}
             >
               <InputLeftElement
                 pointerEvents="none"
@@ -207,7 +207,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
                 py="2"
                 pl="10"
                 onChange={handleInputChange}
-                // bg={'rgb(241, 240, 240)'}
+              // bg={'rgb(241, 240, 240)'}
               />
             </InputGroup>
             <Box onClick={() => handleSearch()} class="search"></Box>
@@ -243,46 +243,46 @@ const SidebarContent = ({ onClose, ...rest }) => {
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (
-          <NavItem key={link.name} to={link.to} icon={link.icon} title={link.title}>
-            {link.name}
-          </NavItem>
+        <NavItem key={link.name} to={link.to} icon={link.icon} title={link.title}>
+          {link.name}
+        </NavItem>
       ))}
     </Box>
   );
 };
 
 
-const NavItem = ({to, icon, children, ...rest }) => {
+const NavItem = ({ to, icon, children, ...rest }) => {
   return (
     <IconContext.Provider value={{ size: "1.5em", color: "#2e81f4", className: "global-class-name" }}>
       <Box className='sidebarRow'>
-      <Link to={to} style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
-      <Flex
-        align="center"
-        // p="4"
-        mx="4"
-        borderRadius="lg"
-        role="group"
-        cursor="pointer"
-        // _hover={{
-        //   bg: 'gray.400',
-        //   color: 'white',
-        // }}
-        {...rest}>
-        {icon && (
-          <Icon
-            mr="4"
-            fontSize="18"
-            _groupHover={{
-              color: 'white',
-            }}
-            as={icon}
-          />
-        )}
-        <h4 className='h4'>{children}</h4>
-      </Flex>
-    </Link>
-    </Box>
+        <Link to={to} style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
+          <Flex
+            align="center"
+            // p="4"
+            mx="4"
+            borderRadius="lg"
+            role="group"
+            cursor="pointer"
+            // _hover={{
+            //   bg: 'gray.400',
+            //   color: 'white',
+            // }}
+            {...rest}>
+            {icon && (
+              <Icon
+                mr="4"
+                fontSize="18"
+                _groupHover={{
+                  color: 'white',
+                }}
+                as={icon}
+              />
+            )}
+            <h4 className='h4'>{children}</h4>
+          </Flex>
+        </Link>
+      </Box>
     </IconContext.Provider>
   );
 };
@@ -406,7 +406,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
                     py="2"
                     pl="10"
                     onChange={handleInputChange}
-                    // bg={'rgb(241, 240, 240)'}
+                  // bg={'rgb(241, 240, 240)'}
                   />
                 </InputGroup>
                 <Box onClick={() => handleSearch()} class="search"></Box>
@@ -456,7 +456,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
                   alignItems="flex-start"
                   spacing="1px"
                   ml="2">
-                  <Text className='h4' fontSize="sm">{userData.firstname+ " "+ userData.surename}</Text>
+                  <Text className='h4' fontSize="sm">{userData.firstname + " " + userData.surename}</Text>
                 </VStack>
                 <Box display={{ base: 'none', md: 'flex' }}>
                   <FiChevronDown fontWeight={'bold'} />

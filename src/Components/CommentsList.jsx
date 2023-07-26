@@ -37,27 +37,27 @@ const CommentsList = ({ postId }) => {
     }, [])
 
     return loading ? (<Loading />) : (<>
-        <Box mt="20" pr={{base: "0", sm: "0", md: "30", lg: "80", xl: "80"}} 
-        pb="40"
+        <Box mt="20" pr={{ base: "0", sm: "0", md: "30", lg: "80", xl: "80" }}
+            pb="40"
         >
             {post && <PostCard
-                        user_profile={post.user.profile_pic}
-                        user_name={post.user.firstname +" "+ post.user.surename}
-                        time={post.date}
-                        post_text={post.text}
-                        post_image={post.images}
-                        PostId={post._id}
-                        userId={post.user._id}
-                    />}
-                    <AddComment postId={postId} profile_pic={post && post.user.profile_pic} getPost={getPost} />
-                    {comments && comments.map((el) => <AllComments
-                     id = {el._id}
-                     userId = {el.user._id}
-                     comment={el.comment}
-                     date = {el.commentAt}
-                     username = {el.user.firstname + " "+ el.user.surename}
-                     profile_pic = {el.user.profile_pic}
-                     />)}
+                user_profile={post.user.profile_pic}
+                user_name={post.user.firstname + " " + post.user.surename}
+                time={post.date}
+                post_text={post.text}
+                post_image={post.images}
+                PostId={post._id}
+                userId={post.user._id}
+            />}
+            <AddComment postId={postId} profile_pic={post && post.user.profile_pic} getPost={getPost} />
+            {comments && comments.map((el) => <AllComments
+                id={el._id}
+                userId={el.user._id}
+                comment={el.comment}
+                date={el.commentAt}
+                username={el.user.firstname + " " + el.user.surename}
+                profile_pic={el.user.profile_pic}
+            />)}
         </Box>
     </>)
 }

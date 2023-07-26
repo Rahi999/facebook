@@ -12,7 +12,7 @@ const NotFound = () => {
         <Box textAlign="center" py={10} px={6}>
             <Center justifyContent="center" widht='100%'>
                 <Image
-                    
+
                     width={'30%'}
                     src='https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg'
                     alt='Facebook logo'

@@ -16,20 +16,20 @@ const AllUsers = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        if(token){
+        if (token) {
             setLoading(true);
-        axios.get(`${process.env.REACT_APP_DEV_BASE_URL}/profile/getAllUsers`, { headers: { "Authorization": `${token}` } })
-        .then((res) => {
-            setUsers(res.data.reverse())
-            console.log(res.data)
-            setLoading(false)
-        })
-        .catch((err) => {
-            console.log(err)
-            setLoading(false)
-        })
+            axios.get(`${process.env.REACT_APP_DEV_BASE_URL}/profile/getAllUsers`, { headers: { "Authorization": `${token}` } })
+                .then((res) => {
+                    setUsers(res.data.reverse())
+                    console.log(res.data)
+                    setLoading(false)
+                })
+                .catch((err) => {
+                    console.log(err)
+                    setLoading(false)
+                })
         }
-        else{
+        else {
             navigate("/login")
         }
     }, [])
@@ -38,11 +38,11 @@ const AllUsers = () => {
     //     { id: "1", firstname: "Name", surename: "lastname", profile_pic: "demo_img.png" },
     //     { id: "2", firstname: "Name", surename: "lastname", profile_pic: "demo_img.png" }
     // ]
-    return loading ? (<Loading />): (<>
+    return loading ? (<Loading />) : (<>
         <Box>
             {users && <ChatLists users={users} />}
         </Box>
     </>)
-    
+
 }
 export default AllUsers
